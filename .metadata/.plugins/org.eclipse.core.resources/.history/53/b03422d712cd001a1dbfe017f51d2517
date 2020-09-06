@@ -1,0 +1,29 @@
+package com.cinematorium.movieservice.service.impl;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cinematorium.movieservice.domain.Movie;
+import com.cinematorium.movieservice.service.MovieService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class MovieServiceImpl implements MovieService {
+	
+	private List<Movie> list;
+	
+	public MovieServiceImpl() {
+		list = Arrays.asList(new Movie(1L, "Film1", 111), new Movie(2L, "Film2", 222),new Movie(3L, "Film3", 333));
+	}
+	
+	@Override
+	public Movie getById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

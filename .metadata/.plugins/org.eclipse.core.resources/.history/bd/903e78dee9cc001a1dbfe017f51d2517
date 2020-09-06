@@ -1,0 +1,23 @@
+package com.cinematorium.cinemaservice.rest;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cinematorium.cinemaservice.domain.Cinema;
+import com.cinematorium.cinemaservice.service.CinemaService;
+
+@RestController(value = "/api")
+public class CinemaApi {
+
+	private CinemaService cinemaService;
+
+	public CinemaApi(CinemaService cinemaService) {
+		this.cinemaService = cinemaService;
+	}
+
+	@GetMapping(value = "/cinema/{id}")
+	private Cinema getCinemaById(@PathVariable Long id) {
+		return cinemaService.getById(id);
+	}
+}

@@ -1,0 +1,11 @@
+package com.cinematorium.cinemaservice.domain;
+
+import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
+
+public class Projection {
+	private Long id;
+	private Movie movie;
+	private LocalDateTime startTime;
+	
+}

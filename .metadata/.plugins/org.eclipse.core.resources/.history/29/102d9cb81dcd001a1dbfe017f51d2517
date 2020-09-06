@@ -1,0 +1,31 @@
+package com.cinematorium.cinemaservice.service.impl;
+
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.cinematorium.cinemaservice.domain.Projection;
+import com.cinematorium.cinemaservice.service.ProjectionService;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+@Service
+@Slf4j
+public class ProjectionServiceImpl implements ProjectionService{
+	
+	private RestTemplate restTemplate;
+	
+	public ProjectionServiceImpl(RestTemplate restTemplate) {
+		this.restTemplate = restTemplate;
+	}
+	
+	@Override
+	public List<Projection> getByCinemaId(Long cinemaId) {
+		restTemplate.getForObject("http://localhost:8444/api/projections" + cinemaId, ParameterizedTypeReference<List<Projection>>)
+		return null;
+	}
+
+}

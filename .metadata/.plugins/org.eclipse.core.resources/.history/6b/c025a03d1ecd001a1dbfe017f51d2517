@@ -1,0 +1,11 @@
+package com.cinematorium.cinemaservice.domain;
+
+import java.time.LocalDateTime;
+
+public class Projection {
+	private Long id;
+	private Long movieId;
+	private Long hallId;
+	private Long cinemaId;
+	private LocalDateTime startTime;
+}

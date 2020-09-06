@@ -1,0 +1,5 @@
+package com.cinematorium.projectionservice.impl;
+
+public class ProjectionServiceImpl {
+
+}

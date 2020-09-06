@@ -1,0 +1,5 @@
+package com.cinematorium.movieservice.rest;
+
+public class MovieApi {
+
+}

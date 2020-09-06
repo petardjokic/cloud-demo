@@ -1,0 +1,7 @@
+package com.cinematorium.cinemaservice.domain;
+
+public class Projection {
+	private Long id;
+	private Movie movie;
+	private Da
+}

@@ -1,0 +1,10 @@
+package com.cinematorium.cinemaservice.domain;
+
+import lombok.Data;
+
+@Data
+public class Hall {
+	private Long id;
+	private Long cinemaId;
+	private String name;
+}

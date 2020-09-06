@@ -1,0 +1,5 @@
+package com.cinematorium.movieservice;
+
+public class MovieService {
+
+}

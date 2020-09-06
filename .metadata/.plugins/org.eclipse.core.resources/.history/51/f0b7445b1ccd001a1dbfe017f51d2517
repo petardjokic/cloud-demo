@@ -1,0 +1,21 @@
+package com.cinematorium.cinemaservice.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cinematorium.cinemaservice.domain.Projection;
+import com.cinematorium.cinemaservice.service.ProjectionService;
+
+import lombok.extern.slf4j.Slf4j;
+
+
+@Service
+@Slf4j
+public class ProjectionServiceImpl implements ProjectionService{@Override
+	public List<Projection> getByCinemaId(Long cinemaId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

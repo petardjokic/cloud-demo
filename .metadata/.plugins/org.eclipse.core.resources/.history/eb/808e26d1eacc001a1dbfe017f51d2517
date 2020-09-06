@@ -1,0 +1,5 @@
+package com.cinematorium.cinemaservice.service.impl;
+
+public class HallServiceImpl {
+
+}

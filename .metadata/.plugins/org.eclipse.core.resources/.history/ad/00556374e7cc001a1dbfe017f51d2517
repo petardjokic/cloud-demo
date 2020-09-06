@@ -1,0 +1,5 @@
+package com.cinematorium.movieservice.domain;
+
+public enum SeatType {
+	CLASSIC, VIP, LOVE
+}

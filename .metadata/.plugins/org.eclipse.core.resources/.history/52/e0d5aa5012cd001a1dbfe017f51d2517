@@ -1,0 +1,7 @@
+package com.cinematorium.movieservice;
+
+import com.cinematorium.movieservice.domain.Movie;
+
+public interface MovieService {
+	public Movie getById(Long id);
+}

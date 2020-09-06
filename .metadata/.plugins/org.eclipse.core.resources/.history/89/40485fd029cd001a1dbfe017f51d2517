@@ -1,0 +1,47 @@
+package com.cinematorium.cinemaservice.service.impl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.cinematorium.cinemaservice.domain.Movie;
+import com.cinematorium.cinemaservice.domain.Projection;
+import com.cinematorium.cinemaservice.domain.ProjectionEager;
+import com.cinematorium.cinemaservice.service.ProjectionService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class ProjectionServiceImpl implements ProjectionService {
+
+	private RestTemplate restTemplate;
+
+	public ProjectionServiceImpl(RestTemplate restTemplate) {
+		log.info("Projections service bean created");
+		this.restTemplate = restTemplate;
+	}
+
+	@Override
+	public List<ProjectionEager> getByCinemaId(Long cinemaId) {
+		List<ProjectionEager> list = new ArrayList<>();
+		
+		ResponseEntity<List<Projection>> response = restTemplate.exchange(
+				"http://localhost:8444/api/projections/" + cinemaId, HttpMethod.GET, null,
+				new ParameterizedTypeReference<List<Projection>>() {
+				});
+		List<Projection> projections = response.getBody();
+		projections.parallelStream().forEach(projection -> {
+			Movie movie = restTemplate.getForObject("http://localhost:833/api/movies/" + projection.getMovieId(), Movie.class);
+			
+		});
+		
+		return projections;
+	}
+
+}

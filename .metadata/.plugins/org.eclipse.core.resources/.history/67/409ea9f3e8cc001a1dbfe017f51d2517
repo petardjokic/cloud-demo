@@ -1,0 +1,17 @@
+package com.cinematorium.cinemaservice.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.cinematorium.cinemaservice.domain.Cinema;
+import com.cinematorium.cinemaservice.service.CinemaService;
+
+@Service
+public class CinemaServiceImpl implements CinemaService{
+
+	@Override
+	public Cinema getById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,9 @@
+package com.cinematorium.cinemaservice.service;
+
+import java.util.List;
+
+import com.cinematorium.cinemaservice.domain.Hall;
+
+public interface HallService {
+	private List<Hall> getHallsByCinema(Long cinemaId);
+}

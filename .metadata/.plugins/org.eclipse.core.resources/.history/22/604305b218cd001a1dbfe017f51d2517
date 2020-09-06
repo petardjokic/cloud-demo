@@ -1,0 +1,5 @@
+package com.cinematorium.projectionservice.rest;
+
+public class ProjectionApi {
+
+}

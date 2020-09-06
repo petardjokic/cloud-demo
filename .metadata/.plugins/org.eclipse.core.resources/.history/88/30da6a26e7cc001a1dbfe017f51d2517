@@ -1,0 +1,12 @@
+package com.cinematorium.cinemaservice.domain;
+
+import lombok.Data;
+
+@Data
+public class Seat {
+	private Long id;
+	private Hall hall;
+	private Integer row;
+	private Integer column;
+	private SeatType seatType;
+}

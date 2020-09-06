@@ -1,0 +1,27 @@
+package com.cinematorium.cinemaservice.service.impl;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cinematorium.cinemaservice.domain.Seat;
+import com.cinematorium.cinemaservice.service.SeatService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class SeatServiceImpl implements SeatService{
+	private List<Seat> list;
+	
+	public SeatServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public List<Seat> getSeatsForHall(Long hallId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

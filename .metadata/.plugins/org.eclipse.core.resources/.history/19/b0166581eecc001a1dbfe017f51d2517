@@ -1,0 +1,44 @@
+package com.cinematorium.cinemaservice.rest;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.cinematorium.cinemaservice.domain.Cinema;
+import com.cinematorium.cinemaservice.domain.Hall;
+import com.cinematorium.cinemaservice.service.CinemaService;
+import com.cinematorium.cinemaservice.service.HallService;
+import com.cinematorium.cinemaservice.service.SeatService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@RestController
+@RequestMapping(value = "/api")
+@Slf4j
+public class CinemaApi {
+
+	private CinemaService cinemaService;
+	private HallService hallService;
+	private SeatService seatService;
+
+	public CinemaApi(CinemaService cinemaService, HallService hallService, SeatService seatService) {
+		log.info("Rest bean created");
+		this.cinemaService = cinemaService;
+		this.hallService = hallService;
+		this.seatService = seatService;
+	}
+
+	@GetMapping(value = "/cinema/{id}")
+	private Cinema getCinemaById(@PathVariable Long id) {
+		return cinemaService.getById(id);
+	}
+	
+	@GetMapping(value = "/cinema/{cinemaId}/halls")
+	private List<Hall> getHallsByForCinema(@PathVariable Long cinemaId) {
+		return hallService.getHallsByCinema(cinemaId);
+	}
+	
+}

@@ -1,0 +1,5 @@
+package com.cinematorium.cinemaservice.service;
+
+public interface CinemaService {
+
+}

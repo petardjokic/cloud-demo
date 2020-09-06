@@ -1,0 +1,30 @@
+package com.cinematorium.projectionservice.service.impl;
+
+import java.time.LocalDateTime;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.cinematorium.projectionservice.domain.Projection;
+import com.cinematorium.projectionservice.service.ProjectionService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class ProjectionServiceImpl implements ProjectionService {
+	
+	private List<Projection> list;
+	
+	public ProjectionServiceImpl() {
+		list = Arrays.asList(new Projection(1L, 1L, 1L, 1L, LocalDateTime.now()),new Projection(2L, 2L, 4L, 2L, LocalDateTime.now()));
+	}
+	
+	@Override
+	public List<Projection> getProjectionsByCinemaId(Long cinemaId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
